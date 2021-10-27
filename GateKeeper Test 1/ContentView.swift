@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var appLockVM: AuthViewModel
     
     var body: some View {
         
@@ -37,7 +38,9 @@ struct ContentView: View {
 }
 
 struct SignInView: View {
+    @EnvironmentObject var appLockVM: AuthViewModel
     var body: some View {
+   
         
         
         
@@ -85,6 +88,7 @@ struct SignInView: View {
     }
     
 struct SignUpView: View {
+    @EnvironmentObject var appLockVM: AuthViewModel
     var body: some View {
         
         
@@ -127,7 +131,11 @@ struct SignUpView: View {
 
     
     struct Dashboard: View {
+        @EnvironmentObject var authVM: AuthViewModel
+        
         var body: some View {
+            
+            
             
             
            // NavigationView{
@@ -143,6 +151,14 @@ struct SignUpView: View {
                     
                     Text ("No previous or pending authentications")
                         .padding()
+                    
+                    Spacer()
+                    
+                    
+                    Button("Face ID"){
+                        authVM.appLockValidation()
+                    }
+                    .font(.largeTitle)
                     
                     Spacer()
                     
@@ -185,6 +201,7 @@ struct SignUpView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
+    //@EnvironmentObject var appLockVM: AppLockViewModel
     static var previews: some View {
         ContentView()
     }
