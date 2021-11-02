@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C6A6C8A2728E803003E4845 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A6C892728E803003E4845 /* AuthViewModel.swift */; };
+		0C6A6C902728FABE003E4845 /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A6C8F2728FABE003E4845 /* PopUpWindow.swift */; };
+		0C6A6CB12731C9AB003E4845 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A6CB02731C9AB003E4845 /* LocationFetcher.swift */; };
 		0C87679B271A290C0085343F /* GateKeeper_Test_1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87679A271A290C0085343F /* GateKeeper_Test_1App.swift */; };
 		0C87679D271A290C0085343F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87679C271A290C0085343F /* ContentView.swift */; };
 		0C87679F271A290E0085343F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C87679E271A290E0085343F /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		0C6A6C892728E803003E4845 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = ../AuthViewModel.swift; sourceTree = "<group>"; };
+		0C6A6C8F2728FABE003E4845 /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
+		0C6A6CB02731C9AB003E4845 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		0C876797271A290C0085343F /* GateKeeper Test 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GateKeeper Test 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C87679A271A290C0085343F /* GateKeeper_Test_1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateKeeper_Test_1App.swift; sourceTree = "<group>"; };
 		0C87679C271A290C0085343F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				0C87679A271A290C0085343F /* GateKeeper_Test_1App.swift */,
 				0C87679C271A290C0085343F /* ContentView.swift */,
 				0C6A6C892728E803003E4845 /* AuthViewModel.swift */,
+				0C6A6CB02731C9AB003E4845 /* LocationFetcher.swift */,
+				0C6A6C8F2728FABE003E4845 /* PopUpWindow.swift */,
 				0C87679E271A290E0085343F /* Assets.xcassets */,
 				0C8767A3271A290E0085343F /* Info.plist */,
 				0C8767A0271A290E0085343F /* Preview Content */,
@@ -143,7 +149,9 @@
 			files = (
 				0C6A6C8A2728E803003E4845 /* AuthViewModel.swift in Sources */,
 				0C87679D271A290C0085343F /* ContentView.swift in Sources */,
+				0C6A6CB12731C9AB003E4845 /* LocationFetcher.swift in Sources */,
 				0C87679B271A290C0085343F /* GateKeeper_Test_1App.swift in Sources */,
+				0C6A6C902728FABE003E4845 /* PopUpWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var appLockVM: AuthViewModel
+    let locationFetcher = LocationFetcher()
+
     
     var body: some View {
         
@@ -50,17 +52,20 @@ struct SignInView: View {
                 .resizable()
                 .scaledToFit()
             Text ("Sign In")
+                .padding()
+                .font(.title)
             
             HStack{
                 Text ("Email: ")
                 TextField("Email address", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
             }
+            .padding()
             
             HStack{
                 Text ("Password: ")
                 TextField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
             }
-            
+            .padding()
             
             NavigationLink(
                 destination: Dashboard(),
@@ -69,6 +74,7 @@ struct SignInView: View {
                         //Eventually a loading screen?
                         .foregroundColor(.secondary)
                         .font(.title)
+                        .padding()
                 })
             
             HStack{
@@ -132,6 +138,8 @@ struct SignUpView: View {
     
     struct Dashboard: View {
         @EnvironmentObject var authVM: AuthViewModel
+        let locationFetcher = LocationFetcher()
+
         
         var body: some View {
             
@@ -141,31 +149,70 @@ struct SignUpView: View {
            // NavigationView{
                 VStack{
                     Text ("Dashboard")
+                        .font(.largeTitle)
+                        .padding(.bottom)
+                        .padding(.bottom)
+                        .padding(.bottom)
+
+
                     
-                    Spacer()
+                    //Spacer()
                     
                     Text ("Scan your badge at your workplace to begin authentication")
                         .padding()
                     
-                    Spacer()
+                  
                     
                     Text ("No previous or pending authentications")
                         .padding()
+                        .padding(.bottom)
+                        .padding(.bottom)
+                        .padding(.bottom)
+
+
                     
-                    Spacer()
+                    //Spacer()
                     
                     
                     Button("Face ID"){
                         authVM.appLockValidation()
                     }
                     .font(.largeTitle)
+                    .padding()
+                    //Spacer()
                     
-                    Spacer()
+                    Button("Start Tracking Location") {
+                        self.locationFetcher.start()
+                    }
+                    .font(.largeTitle)
+                    .padding()
+                    //Spacer()
+
+                    
+                    Button("Read Location") {
+                        if let location = self.locationFetcher.lastKnownLocation {
+                            print("Your location is \(location)")
+                        } else {
+                            print("Your location is unknown")
+                        }
+                    }
+                    .font(.largeTitle)
+                    .padding()
+                    .padding(.bottom)
+                    .padding(.bottom)
+                    .padding(.bottom)
+
+                    
+
+                    
+                    
                     
                     
                     
                     
                 }
+                
+            
                 .toolbar{
                     ToolbarItemGroup(placement: .bottomBar){
                         Spacer()

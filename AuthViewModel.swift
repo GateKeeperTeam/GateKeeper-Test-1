@@ -7,6 +7,7 @@
 
 import Foundation
 import LocalAuthentication
+import UIKit
 
 class AuthViewModel: ObservableObject {
     
@@ -88,10 +89,9 @@ class AuthViewModel: ObservableObject {
             let reason = "Enable App Lock"
             laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason){(success, error) in
                 if success{
-                   
                     print ("success")
                     
-                    self.locationCheck() //trigger second auth method
+                   // self.locationCheck() //trigger second auth method
                     
                     
                     DispatchQueue.main.async { // add what happens on successful authentication
@@ -123,6 +123,8 @@ class AuthViewModel: ObservableObject {
         }
     }
 }
+
+
 enum UserDefaultsKeys:String {
     case isAppLockEnabled
 }

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location Authentication</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>$(PRODUCT_NAME) require TouchID or FaceID permission for GateKeeper</string>
 	<key>CFBundleDevelopmentRegion</key>
