@@ -207,8 +207,25 @@ struct SignUpView: View {
 
                     
                     Button("Read Location") {
-                        if let location = self.locationFetcher.lastKnownLocation {
-                            print("Your location is \(location)")
+                        if let longitude = self.locationFetcher.lastKnownLong, let latitude = self.locationFetcher.lastKnownLat {
+                            var badgeLocationLat : Double = -122.0
+                            var badgeLocationLong: Double = 37.3
+                            
+                            print("Your Longitude is \(longitude)")
+                            print ("Your Latitude is \(latitude)")
+                           // LocationFetcher.compareLocation()
+                            //see if user location is near badge scanner
+                            if longitude <= (badgeLocationLong + 0.5), //could make a smaller value -- worth testing
+                                latitude <= (badgeLocationLat + 0.5)
+                                &&
+                                longitude >= (badgeLocationLong - 0.5),
+                                latitude >= (badgeLocationLat - 0.5)
+                            {
+                                print ("Near the scanner")
+                                
+                                //
+                            }
+                          
                         } else {
                             print("Your location is unknown")
                         }
