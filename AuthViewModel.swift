@@ -122,6 +122,45 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
+    func alertView(){
+    
+        let alert = UIAlertController(title: "Badge Scanned", message: "If this was you -- complete verification Now.", preferredStyle: .alert)
+    
+        alert.addTextField { (pass) in
+            
+            pass.isSecureTextEntry = true
+            pass.placeholder = "Password"
+        }
+    
+        // Action Buttons ...
+        
+        let authenticate = UIAlertAction(title: "Authenticate", style: .default) { (_) in
+            
+        //do your own stuff..
+            
+        // retrieving password
+            
+           // password = alert.textFields![0].text!
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive) {(_) in
+            
+        // do own stuff
+            
+        }
+        // add into alertview
+        alert.addAction(cancel)
+        alert.addAction(authenticate)
+        
+        // presenting alertview
+        
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: {
+            // do your own stuff
+        })
+        
+    }
+    
+    
 }
 
 

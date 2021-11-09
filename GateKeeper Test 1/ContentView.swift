@@ -174,6 +174,23 @@ struct SignUpView: View {
                     //Spacer()
                     
                     
+                    Button(action: {
+                        
+                        authVM.alertView()
+                        
+                    })
+                    {
+                        Text("Pop-Up")
+                        
+                    }
+                    .font(.largeTitle)
+                    .padding(.top)
+                    
+                    
+                    Text("Will run face & location together")
+                        .fontWeight(.bold)
+                    
+                    
                     Button("Face ID"){
                         authVM.appLockValidation()
                     }
