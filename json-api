@@ -1,0 +1,26 @@
+## Must have node and json installed, by running this file it starts the web server and you can access it by putting localhost:3000 in your browser, 
+it is pulling info from a different file (see line 8) in that file you can add new data.
+
+## run this and make sure it returns *lisenting on port 3000*, the other file will be posted to.
+
+
+var http = require("http"); 
+var data = require("./test.json")
+
+
+var server = http.createServer(function(req, res){ 
+    if (req.url === "/") { 
+        res.writeHead(200, {"Content-Type": "text/json"}); 
+        res.end(JSON.stringify(data)); 
+    } 
+    else if (req.url === "/blue") { 
+        listBlue(res) 
+    }
+    else { 
+        res.writeHead(404, {"Content-Type": "text/plain"});       
+        res.end("Data not found");         
+    } 
+}); 
+ 
+server.listen(3000); 
+console.log("Server is listening on port 3000"); 
