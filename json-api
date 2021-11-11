@@ -1,5 +1,5 @@
 ## Must have node and json installed, by running this file it starts the web server and you can access it by putting localhost:3000 in your browser, 
-it is pulling info from a different file (see line 8) in that file you can add new data.
+it is pulling info from a different file (see line 8) in that file you can add new data. ***Will have to change line 8 depending on where you save the data file.***
 
 ## run this and make sure it returns *lisenting on port 3000*, the other file will be posted to.
 
