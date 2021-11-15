@@ -208,8 +208,8 @@ struct SignUpView: View {
                     
                     Button("Read Location") {
                         if let longitude = self.locationFetcher.lastKnownLong, let latitude = self.locationFetcher.lastKnownLat {
-                            var badgeLocationLat : Double = -122.0
-                            var badgeLocationLong: Double = 37.3
+                           let badgeLocationLat : Double = 39.1
+                           let badgeLocationLong: Double = 84.5
                             
                             print("Your Longitude is \(longitude)")
                             print ("Your Latitude is \(latitude)")

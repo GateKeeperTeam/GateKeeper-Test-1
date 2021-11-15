@@ -12,8 +12,8 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     var lastKnownLat: CLLocationDegrees? //changed from CLLocation...
     var lastKnownLong: CLLocationDegrees?
-    var badgeLocationLat: Double = 39.1329
-    var badgeLocationLong: Double = 84.5150
+    var badgeLocationLat: Double = 39.1
+    var badgeLocationLong: Double = 84.5
     
     override init() {
         super.init()
