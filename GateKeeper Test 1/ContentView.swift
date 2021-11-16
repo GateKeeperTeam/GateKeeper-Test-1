@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var appLockVM: AuthViewModel
-    let locationFetcher = LocationFetcher()
+    let locationFetcher = AuthViewModel()
 
     
     var body: some View {
@@ -175,7 +175,7 @@ struct SignUpView: View {
                     
                     
                     Button(action: {
-                        
+                        self.authVM.start()
                         authVM.alertView()
                         
                     })
@@ -193,13 +193,14 @@ struct SignUpView: View {
                     
                     Button("Face ID"){
                         authVM.appLockValidation()
+                        
                     }
                     .font(.largeTitle)
                     .padding()
                     //Spacer()
                     
                     Button("Start Tracking Location") {
-                        self.locationFetcher.start()
+                        self.authVM.start()
                     }
                     .font(.largeTitle)
                     .padding()
@@ -207,7 +208,9 @@ struct SignUpView: View {
 
                     
                     Button("Read Location") {
-                        if let longitude = self.locationFetcher.lastKnownLong, let latitude = self.locationFetcher.lastKnownLat {
+                      
+                        
+                        if let longitude = self.authVM.lastKnownLong, let latitude = self.authVM.lastKnownLat {
                            let badgeLocationLat : Double = 39.1
                            let badgeLocationLong: Double = 84.5
                             
@@ -229,6 +232,10 @@ struct SignUpView: View {
                         } else {
                             print("Your location is unknown")
                         }
+                          
+                        
+                        
+                    //authVM.compareLocations()
                     }
                     .font(.largeTitle)
                     .padding()
